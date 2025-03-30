@@ -296,6 +296,12 @@ a {
     margin-left: 10px;
 }
 
+.trade{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
 .search-bar {
     margin-bottom: 15px;
     text-align: center;

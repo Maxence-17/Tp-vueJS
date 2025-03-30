@@ -23,10 +23,10 @@
   
       <button
         v-if="selectionMode && selectedCards.length === 4"
-        class="buton-page"
+        class="buton-page trade"
         @click="tradeCards"
       >
-        Échanger (4/4)
+        Echanger (4/4)
       </button>
   
       <p v-if="cards.length === 0">Aucune carte obtenue.</p>
