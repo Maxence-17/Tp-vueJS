@@ -5,8 +5,11 @@ function buildImageUrl(baseUrl, quality = 'high', extension = 'webp') {
 }
 
 const CardService = {
-    async getAllCards({ page = 1, limit = 10 } = {}) {
-        const url = `https://api.tcgdex.net/v2/fr/cards?pagination:page=${page}&pagination:itemsPerPage=${limit}`;
+    async getAllCards({ page = 1, limit = 10, search = '' } = {}) {
+        let url = `https://api.tcgdex.net/v2/fr/cards?pagination:page=${page}&pagination:itemsPerPage=${limit}`;
+        if (search) {
+          url += `&name=${encodeURIComponent(search)}`;
+        }
         const response = await ApiService.get(url);
         return response.data.map(card => ({
           id: card.id,
